@@ -11,13 +11,13 @@ I wanted to create a tactile music experience that combines the physical control
 
 ## Images
 ### Physical Build (not done yet)
-![Stereo Machine](img/physical_board.jpg)
+
 
 ### Full 3D Model
-![alt text](img/image-7.png)
+![alt text](img/d.png)
 
 ### Wiring Diagram
-![alt text](img/image-8.png)
+![alt text](img/image-1.png)
 
 ## Bill of Materials (BOM)
 
