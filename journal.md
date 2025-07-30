@@ -1,66 +1,65 @@
-### Date: 2025-06-18  
-**Time Spent:** 2.5 hours  
-**Task:** Research — Understanding How Turntable/Stereo Machines Work  
 
-**Summary:**  
-I spent time reading documentation, tutorials, and teardown videos to learn the basic working principles of turntables and digital stereo systems. Here's a simplified overview of what I found:
+### Date: 2025-06-18
 
-**How Digital Turntable Stereo Machines Work:**  
-- **Power Supply:** Powers the entire system. Usually a 12V DC supply that provides power for the motor, speakers, and electronics.  
-- **Motor Controller (ESC):** Controls the brushless DC motor that spins the platter. Uses PWM signals to regulate speed and torque for precise disk rotation.  
-- **Brushless Motor + Gear System:** High-speed BLDC motor connected to a gear reduction system to slow down the rotation to proper turntable speeds (33/45 RPM).  
-- **Platter/Disk:** The rotating platform that holds records or acts as a control surface. Can be manually moved for scratching/cueing.  
-- **Audio System:** Digital audio processing via RP2 microcontroller, with DAC output to amplified speakers for sound reproduction.  
-- **User Interface:** Two sliding potentiometers (speed control and volume), three Cherry MX switches for functions, and a touch screen LCD for song display and navigation.  
-- **Microcontroller (RP02):** Reads user inputs, controls motor speed, processes audio files, and manages the display interface.  
+**Time Spent:** 2.5 hours
+**Task:** Research — Understanding How Turntable/Stereo Machines Work
+
+i watch some teardown vids and read around abt how theese stero machines work. took notes fast so its kinda scattered but heres what i got
+
+**digital turntable stereo stuff:**
+
+* **Power:** system takes in 12v DC, that’s what feeds the rest (motor/speakers/mcu)
+* **Motor thing (ESC):** tells the brushless motor how fast/strong 2 go, uses PWM
+* **BLDC motor + gears:** spins fast, gears slow it to 33/45rpm.
+* **platter/disk:** the thing u spin manually or auto (scratching too lol)
+* **sound system:** uses rp2 microcontroller + dac, sends music to speakers
+* **controls:** sliders 4 speed & vol, 3 MX buttons, touchscreen too
+* **microcontrollr:** does all the thinking - audio, spinning, buttons, screen
 
 ![alt text](img/image-2.png)
+
 ---
-### Date: 2025-06-19  
-**Time Spent:** 2 hours  
-**Task:** Research — Motor Control and Audio Processing Integration  
 
-**Summary:**  
-I found detailed information on how to integrate precise motor control with real-time audio processing using the RP2's dual-core architecture. I also designed the gear system for the platter drive mechanism.
+### Date: 2025-06-19
 
-##  Key Concept
+**Time Spent:** 2 hours
+**Task:** Research — Motor Control and Audio Processing Integration
 
-I'm building a digital turntable that combines physical disk control with digital audio playback, using manual disk movement for cueing and potentiometers for speed/volume control.
+looked into the rp2 dual core use 4 audio + motor at the same time. drew out gear system too.
 
-The RP2 will handle both motor control and audio processing simultaneously using its dual-core design.
+## Key Concept
 
-##  Gear System Design
+im trying to mix real disk feel w/ digital music, so u can scratch or cue by hand but still play mp3s. rp2 does both jobs together.
 
-The platter is connected to a pipe shaft that extends into the case where it interfaces with a 3-gear system:
+## Gears i planned
 
-* **Main Gear (4 teeth):** Connected to the pipe shaft from the platter
-* **Small Drive Gear (4 teeth):** Connected to the BLDC motor output
-* **Encoder Gear (6 teeth):** Connected to the rotary encoder for position feedback
+* big gear (4t): on the disk shaft
+* smol gear (4t): connected to the motor
+* encoder gear (6t): for the feedback
 
-This gear configuration provides:
-* 1:1 ratio between motor and platter for direct speed control
-* Encoder feedback at 1.5x platter rotation for improved position resolution
-* Compact design that fits within the case enclosure
+ratio = 1:1 for motor and platter
+encoder sees 1.5x turns for more accuracy
 
-    ![alt text](img/image-3.png)
-    ![alt text](img/image-4.png)
-    ![alt text](img/image-5.png)
-    ![alt text](img/image-6.png)
-    ![alt text](img/image-7.png)
-    ![alt text](img/image-8.png)
 
-##  System Architecture
+![alt text](img/image-3.png)
+![alt text](img/image-4.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
+![alt text](img/image-7.png)
+![alt text](img/image-8.png)
 
-**Audio Chain:**
-* Digital audio files → RP2 audio processing → Audio HAT → Speakers
+## basic system
 
-**Motor Control Chain:**
-* Speed potentiometer → ADC → RP2 → PWM → Motor ESC → BLDC Motor → Gear reduction → Platter
+**music path:**
+file > rp2 audio core > audio hat > speakers
 
-**User Interface:**
-* Manual platter movement → Encoder feedback → RP2 → Audio position update
-* Cherry MX switches → Digital inputs → Function control
-* Touch LCD → SPI/I2C → Display updates and touch input
+**motor path:**
+slider pot > adc > rp2 > pwm > esc > motor > gearz > platter
+
+**interface:**
+manual spin > encoder > rp2 > update song spot
+MX buttons > rp2 > triggers
+touchscreen > spi/i2c > screen stuff
 
 ---
 
@@ -69,20 +68,18 @@ This gear configuration provides:
 **Time Spent:** 2 hours
 **Task:** Fabrication — Creating Top Cover with Interface Cutouts
 
-**Summary:**
-Designed and fabricated the top cover for the stereo machine case. This cover houses all the user interface elements and provides a clean, professional appearance while allowing access to all controls.
+made the top panel 4 the case. it holds all the buttons + screen + sliders. looks ok
 
-##  Top Cover Features
+## features
 
-* **Cherry MX Switch Holes:** Three precision-cut rectangular openings for the mechanical switches
-* **Sliding Potentiometer Slots:** Two linear cutouts allowing full travel range for speed and volume controls
-* **LCD Screen Opening:** Central rectangular cutout sized for the 3.5" touch screen with proper clearance
-* **Material:** Cut from the same MDF as the base platform for consistency
-* **Mounting:** Designed with screw holes to securely attach to the main case structure
+* 3 holes 4 Cherry MX buttons
+* long holes for speed/vol sliders
+* middle rectangle for the LCD
+* cut it from MDF like the rest
+* holes 4 mounting screws
 
-The cover provides a unified control surface while protecting the internal electronics and maintaining easy access to all user controls.
+protects insides but still lets u use everything
 
----
 ![alt text](img/image-9.png)
 
 ---
@@ -92,19 +89,16 @@ The cover provides a unified control surface while protecting the internal elect
 **Time Spent:** 30 minutes
 **Task:** Fabrication — Creating Bottom Base Panel
 
-**Summary:**
-Fabricated the bottom panel of the case to complete the enclosure structure. This provides a solid foundation and protects the internal components from below.
+made the base (bottom part) of the case so now it’s like a real box lol
 
-##  Bottom Base Features
+## what it has
 
-* **Solid Base:** Cut from MDF to match the overall case design
-* **Speaker Indents:** Recessed areas cut to accommodate the speaker enclosures
-* **Access Points:** Removable section for easy access to internal wiring and components
-* **Mounting:** Designed to secure all internal components and provide structural integrity
+* solid MDF base
+* speaker spots (recessed a bit)
+* part that can be opened 4 repairs
+* holds stuff in place strong
 
-The bottom panel completes the case structure, creating a fully enclosed stereo machine while maintaining serviceability.
-
----
+finishes the shell so now its enclosed
 
 ![alt text](img/image-10.png)
 
@@ -115,47 +109,42 @@ The bottom panel completes the case structure, creating a fully enclosed stereo 
 **Time Spent:** 2 hours
 **Task:** Wiring and Component Testing
 
-**Summary:**
-Completed the wiring for all user interface components and motor control. Also conducted initial testing with the Raspberry Pi Zero W, which revealed performance limitations that required upgrading to the Pi Zero 2W.
+wired all parts + tested on pi zero W (didnt work great so swapped it)
 
-##  Wiring Configuration
+## wiring setup
 
-**GPIO Pin Allocation:**
-* **Audio HAT:** Uses I2S pins for audio output
-* **LCD Screen:** Uses I2C and SPI pins for communication and control
-* **Cherry MX Switches:** Connected with pull-up resistors
-* **Sliding Potentiometers:** Connected to ADC via I2C expander (shared with LCD)
-* **Motor ESC:** PWM output for speed control
-* **Rotary Encoder:** Quadrature signal inputs for position feedback
+**GPIOs used:**
 
-**Pin Usage Summary:**
-* Significant GPIO pins used due to multiple peripherals
-* Shared I2C bus for LCD and ADC to conserve pins
-* All critical functions successfully mapped
+* i2s pins > audio hat
+* i2c+spi > LCD screen
+* buttons > digital pins w/ pullups
+* sliders > i2c ADC
+* motor > pwm pin
+* encoder > 2 input pins (quad signal)
 
-##  Testing Results and Hardware Upgrade
+**shared buses to save pins**
 
-**Initial Testing with Raspberry Pi Zero W:**
-* Motor control worked smoothly
-* Audio playback had noticeable stuttering and dropouts
-* LCD updates were slow and laggy
-* Dual-core processing requirements exceeded single-core capabilities
+## results
 
-**Issues Encountered:**
-* Insufficient CPU power for simultaneous audio processing and motor control
-* Audio HAT performance degraded when LCD was actively updating
-* Overall system responsiveness was poor
+**on Pi Zero W:**
 
-**Solution - Upgrade to Raspberry Pi Zero 2W:**
-* Quad-core ARM Cortex-A53 provides significantly more processing power
-* Better handling of multitasking between audio, display, and motor control
-* Maintains same form factor and GPIO pinout compatibility
-* All components now function smoothly without performance issues
+* motor ran fine
+* audio lagged bad
+* screen was slow
+* pi couldn’t do both well
 
-The hardware upgrade resolved all performance bottlenecks and the system now operates as intended.
+**issues:**
 
----
-![alt text](img/image-1.png)
+* audio breaks up
+* screen lags = bad UX
+* CPU not enough
+
+**fix:**
+
+* moved to pi zero 2W
+* quad core fixed all that
+* same shape so easy swap
+* everything runs smooth now
 
 ---
 
@@ -164,56 +153,55 @@ The hardware upgrade resolved all performance bottlenecks and the system now ope
 **Time Spent:** 4 hours
 **Task:** Software Development — Creating Turntable Player Application
 
-**Summary:**
-Developed a comprehensive Python-based software solution for the Raspberry Pi Zero 2W that handles all aspects of the digital turntable operation. The software is functionally complete but requires physical testing with the actual hardware.
+wrote a full python app that plays music, spins disk, shows screen stuff, all that.
 
-##  Software Features Implemented
+## features
 
-**Music Player Core:**
-* MP3 file playback using pygame mixer
-* Automatic library scanning from `/home/pi/Music/` directory
-* Metadata extraction (title, artist, album, duration) from MP3 ID3 tags
-* Album art extraction and display from embedded images
-* Playlist management with shuffle functionality
+**player stuff:**
 
-**Hardware Integration:**
-* GPIO interface for Cherry MX button controls (play/pause, skip, bluetooth toggle)
-* SPI ADC integration for reading sliding potentiometers (volume and speed control)
-* Real-time potentiometer value mapping to audio parameters
-* Button debouncing and state management
+* plays mp3s w/ pygame
+* finds music in `/home/pi/Music/`
+* gets song name, artist, album etc
+* shows album art too
+* playlist with shuffle
 
-**Display System:**
-* Attractive GUI using pygame on the 3.5" LCD screen
-* Custom font loading with fallback support
-* Real-time display of current track information
-* Album art rendering with automatic resizing
-* Visual indicators for volume, speed, play state, and bluetooth status
-* Progress bars and centered text layout
+**hardware:**
 
-**Audio Processing:**
-* Variable volume control from potentiometer input
-* Playback speed adjustment (0.5x to 2.0x range)
-* Integration with system audio HAT
-* Bluetooth audio toggle functionality
+* MX buttons do play/pause etc
+* sliders read by SPI ADC
+* sliders control speed + vol live
+* button states managed
 
-**System Integration:**
-* Multi-threaded architecture for smooth operation
-* 10Hz update rate for responsive controls
-* Systemd service configuration for auto-start on boot
-* Clean shutdown and resource management
+**screen:**
 
-##  Current Status
+* pygame GUI on LCD
+* shows song data
+* art shows nice
+* has vol/speed indicators
+* progress bar too
 
-The software is architecturally complete with all major features implemented:
-- 4 Python modules totaling ~400 lines of code
-- Hardware abstraction layer for GPIO and SPI
-- Complete user interface with metadata display
-- Installation script and dependency management
+**audio:**
 
-**Not yet tested:** Physical hardware integration pending. The code needs validation with actual potentiometer readings, button responses, LCD display output, and audio playback quality on the target hardware.
+* speed change 0.5x to 2x
+* vol slider mapped live
+* works w/ audio HAT
+* BT toggle too
 
-Next step: Deploy to Raspberry Pi Zero 2W and conduct comprehensive hardware testing.
+**system stuff:**
 
----
+* multithreaded so it don’t lag
+* updates at 10hz
+* runs at boot with systemd
+* shuts down clean
 
+## status
+
+software is mostly DONE:
+
+* 4 scripts, \~400 lines
+* split into modules
+* hardware layer added
+* install script done too
+
+**NOT tested on real thing yet.** need to plug it in & try IRL
 
