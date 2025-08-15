@@ -15,6 +15,8 @@ I wanted to create a tactile music experience that combines the physical control
 
 ### Full 3D Model
 ![alt text](img/d.png)
+![alt text](img/3dcomponets.png)
+![alt text](image.png)
 
 ### Wiring Diagram
 ![alt text](img/image-1.png)
