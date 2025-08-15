@@ -17,7 +17,8 @@ I wanted to create a tactile music experience that combines the physical control
 ![alt text](img/d.png)
 ![alt text](img/3dcomponets.png)
 ![alt text](image.png)
-
+actual render highkey looks ugly 
+![alt text](image-1.png)
 ### Wiring Diagram
 ![alt text](img/image-1.png)
 
