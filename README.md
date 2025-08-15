@@ -15,6 +15,8 @@ I wanted to create a tactile music experience that combines the physical control
 
 ### Full 3D Model
 ![alt text](img/d.png)
+
+i am aware that the potenomere doesnt fit, its suppoesed to be like that because there wasnt a larger 3d render from the provider/ this is what they gave.
 ![alt text](img/3dcomponets.png)
 ![alt text](image.png)
 actual render highkey looks ugly 
