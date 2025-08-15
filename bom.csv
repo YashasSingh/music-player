@@ -1,12 +1,12 @@
 Item,Description,Qty,Unit Price (USD),Total Price (USD),Notes,Link
 Brushless Motor,BLDC Motor for platter drive,1,$0.00,$0.00,Already owned,
 Gear Reduction,3D printed gear system (TBD ratio),1,$0.00,$0.00,Custom 3D printed parts,
-Speakers,4" Full Range Speakers 8Ω 20W (Pair),1,$0.00,$0.00,Already owned,
+Speakers,4 Full Range Speakers 8Ω 20W (Pair),1,$0.00,$0.00,Already owned,
 Audio HAT,Audio processing module,1,$0.00,$0.00,Already owned,
-Touch LCD,3.5" TFT Touch Screen 480x320 SPI,1,$0.00,$0.00,Already owned,
+Touch LCD,3.5 TFT Touch Screen 480x320 SPI,1,$0.00,$0.00,Already owned,
 Potentiometers,10kΩ Sliding Potentiometers,2,$2.95,$5.90,Speed and volume control,https://www.adafruit.com/product/4219
 Cherry MX Switches,Cherry MX Blue Mechanical Switches,3,$0.00,$0.00,Already owned,
-Audio Input Cable,1/4" TRS to 3.5mm Audio Cable,1,$14.99,$14.99,Piano/keyboard input,https://www.amazon.com/gp/product/B0CCRZMXFP/ref=ewc_pr_img_4?smid=A1A6I0UGKW7GMS&psc=1
+Audio Input Cable,1/4 TRS to 3.5mm Audio Cable,1,$14.99,$14.99,Piano/keyboard input,https://www.amazon.com/gp/product/B0CCRZMXFP/ref=ewc_pr_img_4?smid=A1A6I0UGKW7GMS&psc=1
 Microcontroller,Raspberry Pi Zero 2W,1,$26.99,$26.99,Computation board,https://www.amazon.com/gp/product/B0DKKXS4RV/ref=ewc_pr_img_2?smid=A1RK0V6ARA6ZY4&psc=1
 Cables & Adapters,USB charging mini HDMI SD card adapter,1,$0.00,$0.00,Already owned,
 Cherry MX Keycaps,Mechanical keyboard keycaps (10-pack),1,$5.95,$5.95,Function key labels,https://www.adafruit.com/product/5007
